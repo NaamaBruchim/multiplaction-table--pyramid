@@ -67,11 +67,26 @@ function pyramid2() {
 function pyramid3() {
     numOfLevel = +prompt("enter number of levels");
     for (let i = 1; i <= numOfLevel; i++) {
-        let star = " ";
+        let star = "";
         for (let j = 1; j <= numOfLevel - i; j++) {
             star += " ";
         }
         for (let k = 1; k <= i * 2 - 1; k++) {
+            star += "*";
+        }
+        console.log(star);
+
+    }
+}
+
+function pyramid4() {
+    numOfLevel = +prompt("enter number of levels");
+    for (let i = 1; i <= numOfLevel; i++) {
+        let star = "";
+        for (let j = 1; j <= numOfLevel - i; j++) {
+            star += " ";
+        }
+        for (let k = 1; k <= i; k++) {
             star += "*";
         }
         console.log(star);
