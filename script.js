@@ -7,6 +7,7 @@
 // 4.3 centered
 
 
+
 function countToNum() {
 
 
@@ -66,9 +67,9 @@ function pyramid2() {
 function pyramid3() {
     numOfLevel = +prompt("enter number of levels");
     for (let i = 1; i <= numOfLevel; i++) {
-        let star = "";
+        let star = " ";
         for (let j = 1; j <= numOfLevel - i; j++) {
-            star += "";
+            star += " ";
         }
         for (let k = 1; k <= i * 2 - 1; k++) {
             star += "*";
