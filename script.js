@@ -137,19 +137,17 @@ function sumAllNumsInRange() {
     let userNum2 = +prompt(`enter second number (bigger than ${userNum1})`);
     let range = 0;
     let sum = 0;
+    let str = "";
     if (userNum2 < userNum1) {
         alert("wrong input asshole");
     }
     let arr = [1, 3, 4, 5, 6, 7, 8, 30, 22, 2, 10, 24];
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] > userNum1 && arr[i] < userNum2) {
-            range = arr[i];
-            sum += range;
-
+            sum += arr[i];
+            str += ` + ${arr[i]} `;
         }
-
     }
-    console.log(`the sum of the numbers between ${userNum1} and ${userNum2} is ${sum}`);
-
+    console.log(`the sum of the numbers between ${userNum1} and ${userNum2} is: ${sum} = ${str}`);
     console.log(arr);
 }
