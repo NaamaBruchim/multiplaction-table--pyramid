@@ -9,8 +9,6 @@
 
 
 function countToNum() {
-
-
     userInput = prompt("enter number:");
     for (let count = 1; count < userInput;) {
         console.log(count);
@@ -152,6 +150,6 @@ function sumAllNumsInRange() {
 
     }
     console.log(`the sum of the numbers between ${userNum1} and ${userNum2} is ${sum}`);
-    console.log(arr[i]);
+
     console.log(arr);
 }
