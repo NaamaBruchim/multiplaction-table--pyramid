@@ -121,33 +121,61 @@ function countDuplication() {
 
 // get 2 numbers from the user
 // print the sum of all the numbers between the user input
-// validate input!
-// example:
-//      userInput num1 = 10
-//      userInput num2 = 8
-//      print error message to the user
 // example:
 //      arr = [1, 3, 4, 5, 6, 7, 8, 30, 22, 2, 3, 24]
-//      userInput num1 = 10
-//      userInput num2 = 31
+//      userInput num1 = 31
+//      userInput num2 = 10
 //      print: the sum of the numbers between num1 and num2 is 66: 30 + 22 + 24
 
 function sumAllNumsInRange() {
     let userNum1 = +prompt("enter first number");
-    let userNum2 = +prompt(`enter second number (bigger than ${userNum1})`);
-    let range = 0;
+    let userNum2 = +prompt(`enter second number`);
     let sum = 0;
     let str = "";
-    // if (userNum2 < userNum1) {
-    //     alert("wrong input asshole");
-    // }
+
     let arr = [1, 3, 4, 5, 6, 7, 8, 30, 22, 2, 10, 24];
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i] >= userNum1 && arr[i] <= userNum2) {
+        if ((userNum1 <= userNum2 && arr[i] >= userNum1 && arr[i] <= userNum2) ||
+            (userNum1 > userNum2 && arr[i] >= userNum2 && arr[i] <= userNum1)) {
             sum += arr[i];
             str += ` + ${arr[i]} `;
         }
     }
+
     console.log(`the sum of the numbers between ${userNum1} and ${userNum2} is: ${sum} = ${str}`);
     console.log(arr);
+}
+
+function getSumAllNumsInRange(userNum1, userNum2, arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if ((userNum1 <= userNum2 && arr[i] >= userNum1 && arr[i] <= userNum2) ||
+            (userNum1 > userNum2 && arr[i] >= userNum2 && arr[i] <= userNum1)) {
+            sum += arr[i];
+        }
+    }
+
+    return sum;
+}
+
+function minMax() {
+    let arr = [11, 3, 4, 5, 6, 7, 8, 30, 22, 2, 10, 24];
+    let max = arr[0];
+    let min = arr[0];
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+
+    let sum = getSumAllNumsInRange(min, max, arr);
+    let avg = sum / arr.length;
+
+    console.log("avg: " + avg);
+    console.log("max: " + max);
+    console.log("min: " + min);
 }
